@@ -7,7 +7,7 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
-class Books(models.Model):
+class Book(models.Model):
     category = models.ForeignKey(Category, related_name='books', on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     intro = models.TextField()

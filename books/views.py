@@ -1,3 +1,4 @@
+
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, render
 
@@ -9,7 +10,7 @@ def home(request):
     context = {
         'books': books
     }
-    return render(request, 'book/home.html', context)
+    return render(request, 'books/home.html', context)
 
 
 def detail(request, id):
@@ -17,4 +18,4 @@ def detail(request, id):
     context = {
         'books': books,
     }
-    return render(request, 'book/detail_book.html', context)
+    return render(request, 'books/detail_book.html', context)
