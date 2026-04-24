@@ -68,14 +68,12 @@
               <div class="btn-group">
                 {% comment %}
                 <a href="{% url 'edit_book' book.id %}" type="button" class="btn btn-sm btn-outline-primary">
-                  Edit
+
                 </a>
                 <a href="{% url 'detail_book' book.id %}" type="button" class="btn btn-sm btn-outline-primary">
                   Ver mas
                 </a>
-                <a href="{% url 'delete_book' book.id %}" type="button" class="btn btn-sm btn-outline-danger">
-                  Delete
-                </a>
+                
                 {% endcomment %}
               </div>
               <small class="text-body-secondary">{{book.created_at|timesince}}</small>
