@@ -1,19 +1,18 @@
 from django.db import models
 
-# Create your models here.
 class Category(models.Model):
-    title = models.CharField(max_length=255)
+    name = models.CharField(max_length=100)
     
     def __str__(self):
-        return self.title
+        return self.name
 
 class Book(models.Model):
-    category = models.ForeignKey(Category, related_name='books', on_delete=models.CASCADE)
-    title = models.CharField(max_length=255)
-    intro = models.TextField()
-    body = models.TextField()
+    category = models.ForeignKey(Category, related_name='posts', on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    author = models.CharField(max_length=200, default='', blank=True)
+    image = models.ImageField(upload_to='books/', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='upload/', blank=True, null=True)
+    update_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
         return self.title
